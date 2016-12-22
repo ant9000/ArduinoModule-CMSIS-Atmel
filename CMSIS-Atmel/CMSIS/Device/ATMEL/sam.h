@@ -398,13 +398,55 @@
 /* Entire SAM4 family */
 #define SAM4_SERIES (SAM4N_SERIES || SAM4S_SERIES || SAM4E_SERIES || SAM4C_SERIES)
 
+/* SAML21A series */
+#define SAML21E18A ( \
+    part_is_defined( SAML21E18A ))
+#define SAML21G18A ( \
+    part_is_defined( SAML21G18A ))
+#define SAML21J18A ( \
+    part_is_defined( SAML21J18A ))
+
+/* Entire SAML21A series */
+#define SAML21A_SERIES (SAML21E18A || SAML21G18A || SAML21J18A)
+
+/* SAML21B series */
+#define SAML21E15B ( \
+    part_is_defined( SAML21E15B ))
+#define SAML21E16B ( \
+    part_is_defined( SAML21E16B ))
+#define SAML21E17B ( \
+    part_is_defined( SAML21E17B ))
+#define SAML21E18B ( \
+    part_is_defined( SAML21E18B ))
+#define SAML21G16B ( \
+    part_is_defined( SAML21G16B ))
+#define SAML21G17B ( \
+    part_is_defined( SAML21G17B ))
+#define SAML21G18B ( \
+    part_is_defined( SAML21G18B ))
+#define SAML21J16B ( \
+    part_is_defined( SAML21J16B ))
+#define SAML21J17B ( \
+    part_is_defined( SAML21J17B ))
+#define SAML21J18B ( \
+    part_is_defined( SAML21J18B ))
+
+/* Entire SAML21B series */
+#define SAML21B_SERIES (SAML21E15B || SAML21E16B || SAML21E17B || SAML21E18B || SAML21G16B || SAML21G17B || SAML21G18B || SAML21J16B || SAML21J17B || SAML21J18B)
+
+/* Entire SAML21 series */
+#define SAML21_SERIES (SAML21_SERIES || SAML21B_SERIES)
+
+/* Entire SAML family */
+#define SAML_SERIES (SAML21_SERIES)
+
 /*
  * ----------------------------------------------------------------------------
  * Whole SAM product line
  * ----------------------------------------------------------------------------
  */
 
-#define SAM (SAM4_SERIES || SAMR_SERIES || SAM3_SERIES || SAMS_SERIES || SAME_SERIES || SAMD_SERIES || SAMG_SERIES)
+#define SAM (SAM4_SERIES || SAMR_SERIES || SAM3_SERIES || SAMS_SERIES || SAME_SERIES || SAMD_SERIES || SAMG_SERIES || SAML_SERIES)
 
 /*
  * ----------------------------------------------------------------------------
@@ -439,5 +481,9 @@
 #if SAM4_SERIES
 #include "sam4.h"
 #endif /* SAM4_SERIES */
+
+#if SAML_SERIES
+#include "saml.h"
+#endif /* SAML_SERIES */
 
 #endif
