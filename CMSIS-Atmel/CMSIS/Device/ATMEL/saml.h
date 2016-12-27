@@ -29,10 +29,10 @@
 #ifndef _SAML_INCLUDED_
 #define _SAML_INCLUDED_
 
-#if defined (SAML21_SERIES)
-#include "saml21/include/sam.h"
-#elif defined (SAML21B_SERIES)
-#include "saml21/include_b/sam.h"
+#if (SAML21A_SERIES)
+#include "saml21/include/saml21.h"
+#elif (SAML21B_SERIES)
+#include "saml21/include_b/saml21.h"
 #endif
 
 #endif /* _SAML_INCLUDED_ */
